@@ -65,7 +65,7 @@ jobs:
       - name: Checkout homebrew-mommy
         uses: actions/checkout@v4
         with:
-          repository: FWDekker/homebrew-mommy
+          repository: fwdekker/homebrew-mommy
           path: homebrew-mommy
           ref: dev
       - name: Patch homebrew-mommy
@@ -176,7 +176,7 @@ jobs:
       - name: Checkout aur-mommy
         uses: actions/checkout@v4
         with:
-          repository: FWDekker/aur-mommy
+          repository: fwdekker/aur-mommy
           path: aur-mommy
           ref: dev
       - name: Fix aur-mommy directory ownership
@@ -338,7 +338,7 @@ jobs:
       - name: Checkout homebrew-mommy
         uses: actions/checkout@v4
         with:
-          repository: FWDekker/homebrew-mommy
+          repository: fwdekker/homebrew-mommy
           path: homebrew-mommy
           ref: dev
       - name: Patch homebrew-mommy

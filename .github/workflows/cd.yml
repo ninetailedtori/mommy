@@ -233,7 +233,7 @@ jobs:
           release_notes_file: RELEASE_NOTES.md
       - name: Prepend release notes
         run: |
-          echo -e "mommy can also be installed using a package manager. [check the readme for more info](https://github.com/FWDekker/mommy/tree/${MOMMY_VERSION}#-installation)~\n" | cat - RELEASE_NOTES.md | tee RELEASE_NOTES.md
+          echo -e "mommy can also be installed using a package manager. [check the readme for more info](https://github.com/fwdekker/mommy/tree/${MOMMY_VERSION}#-installation)~\n" | cat - RELEASE_NOTES.md | tee RELEASE_NOTES.md
       - name: Publish release
         uses: softprops/action-gh-release@v1
         if: ${{ github.event.inputs.dry_run == 'false' && github.event.inputs.release_mommy == 'true' }}
@@ -303,7 +303,7 @@ jobs:
           echo "::endgroup::"
 
           echo "::group::Commit changes"
-          git config --global user.name "FWDekkerBot"
+          git config --global user.name "fwdekkerbot"
           git config --global user.email "bot@fwdekker.com"
           git add --all
           git commit -m "🔖 mommy added package mommy $MOMMY_VERSION~"
@@ -351,7 +351,7 @@ jobs:
       - name: Checkout aur-mommy
         uses: actions/checkout@v4
         with:
-          repository: FWDekker/aur-mommy
+          repository: fwdekker/aur-mommy
           path: aur-mommy
           ref: master
           fetch-depth: 0
@@ -379,7 +379,7 @@ jobs:
           echo "::endgroup::"
 
           echo "::group::Commit update"
-          sudo -u build git config --global user.name "FWDekkerBot"
+          sudo -u build git config --global user.name "fwdekkerbot"
           sudo -u build git config --global user.email "bot@fwdekker.com"
           sudo -u build git add --all
           sudo -u build git commit -m "🔖 mommy updated the build files to mommy $MOMMY_VERSION~" $empty_option
@@ -415,7 +415,7 @@ jobs:
       - name: Checkout homebrew-mommy
         uses: actions/checkout@v4
         with:
-          repository: FWDekker/homebrew-mommy
+          repository: fwdekker/homebrew-mommy
           path: homebrew-mommy
           ref: main
           fetch-depth: 0
@@ -441,7 +441,7 @@ jobs:
           echo "::endgroup::"
 
           echo "::group::Commit update"
-          git config --global user.name "FWDekkerBot"
+          git config --global user.name "fwdekkerbot"
           git config --global user.email "bot@fwdekker.com"
           git add --all
           git commit -m "🔖 mommy updated the formula to mommy $MOMMY_VERSION~" $empty_option
