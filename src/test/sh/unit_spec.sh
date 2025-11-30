@@ -104,7 +104,7 @@ Describe "mommy"
             It "creates the toggle state file if it does not exist when using $1"
                 When run "$MOMMY_EXEC" -t
                 The output should not equal ""
-                The file "$XDG_STATE_HOME/mommy/toggle" should exist
+                The file "$XDG_STATE_HOME/mommy/toggle" should be exist
             End
 
             It "deletes the toggle state file if it already exists when using $1"
@@ -112,7 +112,7 @@ Describe "mommy"
 
                 When run "$MOMMY_EXEC" -t
                 The output should not equal ""
-                The file "$XDG_STATE_HOME/mommy/toggle" should not exist
+                The file "$XDG_STATE_HOME/mommy/toggle" should not be exist
             End
         End
 
