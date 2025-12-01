@@ -27,7 +27,6 @@ on:
 permissions:
   contents: write
   discussions: write
-  packages: read
 
 jobs:
   pre-flight-checks:
@@ -249,7 +248,7 @@ jobs:
       - name: Publish release
         if: ${{ github.event.inputs.dry_run == 'false' && github.event.inputs.release_mommy == 'true' }}
         env:
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create "$MOMMY_VERSION" \
             dist/mommy* \
@@ -264,8 +263,6 @@ jobs:
           ref: latest
           fetch-depth: 0
           fetch-tags: true
-          # Required to push fast-forwarded branch back
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - name: Update 'latest' branch
         if: ${{ github.event.inputs.dry_run == 'false' && github.event.inputs.release_mommy == 'true' }}
         run: |
