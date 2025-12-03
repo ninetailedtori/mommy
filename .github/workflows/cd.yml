@@ -250,7 +250,7 @@ jobs:
   release-mommy:
     if: ${{ github.event.inputs.release_mommy == 'true' }}
     # `pre-flight-checks` is required to access `MOMMY_VERSION`
-    needs: [ pre-flight-checks, build-linux, build-macos, build-freebsd, build-netbsd, build-openbsd ]
+    needs: [ pre-flight-checks, build-linux, build-macos, build-freebsd, build-netbsd, build-openbsd, build-haiku ]
     runs-on: ubuntu-latest
     env:
       MOMMY_VERSION: ${{ needs.pre-flight-checks.outputs.MOMMY_VERSION }}

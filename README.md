@@ -899,6 +899,8 @@ you should **not** update the `latest` branch manually!
   * [homebrew-mommy](https://github.com/fwdekker/homebrew-mommy)
     * updated automatically when `mommy` updates
     * always [manually check deployment status](https://github.com/fwdekker/homebrew-mommy/actions?query=branch%3Amain)~
+  * [nixpkgs](https://search.nixos.org/packages?show=mommy)
+    * [a pull request is usually created by a bot within a few hours](https://github.com/NixOS/nixpkgs/pulls?q=mommy)
 </details>
 
 
