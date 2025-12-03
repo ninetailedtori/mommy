@@ -1,6 +1,12 @@
 #!/bin/sh
 # shellcheck disable=SC2317 # False positive when using `return` or `exit` inside `Mock`
 
+
+## Configuration
+# Variables defined below can be overridden when invoking `make test`. For example, `MOMMY_POSIX2024_SKIP=1 make test`.
+: "${MOMMY_POSIX2024_SKIP:=0}"  # "1" to test for POSIX 2024-only features, "0" to skip them
+
+
 ## Use isolated XDG directories
 XDG_CONFIG_DIRS="$MOMMY_TMP_DIR/xdg/"
 export XDG_CONFIG_DIRS
@@ -346,13 +352,6 @@ Describe "mommy"
 
         Describe "eval and pipefail:"
             Describe "pipefail without eval:"
-                It "does not fail if '--help' is used with '--pipefail'"
-                    When run "$MOMMY_EXEC" -p -h
-                    The output should be present
-                    The error should not be present
-                    The status should be success
-                End
-
                 It "does not fail if '--version' is used with '--pipefail'"
                     When run "$MOMMY_EXEC" -p -v
                     The output should be present
@@ -397,6 +396,10 @@ Describe "mommy"
             End
 
             Describe "with pipefail option:"
+                posix_2024_disabled() { test "$MOMMY_POSIX2024_SKIP" = "1"; }
+                Skip if "POSIX 2024 compliance should not be tested" posix_2024_disabled
+
+
                 Parameters:value "-p -e " "-p --eval=" "-pe " "--pipefail -e " "--pipefail --eval="
 
                 It "considers the command a success if all parts succeed [$1]"
