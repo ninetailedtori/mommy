@@ -1,5 +1,8 @@
 # Changelog
 ## [9.9.9-unreleased] -- 9999-12-31
+### changed
+* 🦈 mommy updated fish completions for fish v4~ ([#162](https://github.com/fwdekker/mommy/pull/162))
+
 ### fixed
 * 🌿 mommy fixed builds on opensuse tumbleweed~ ([#162](https://github.com/fwdekker/mommy/pull/162))
 * 🚧 mommy now detects when the new toggle feature (`-t`/`--toggle`) from v1.7.0 fails to (de)activate~ ([#161](https://github.com/fwdekker/mommy/pull/161)) ([#163](https://github.com/fwdekker/mommy/pull/163))
