@@ -33,7 +33,7 @@ find your operating system and package manager for the right instructions~
 <details>
 <summary>alpine linux</summary>
 
-* **homebrew** (automatic updates)  
+* **homebrew** (automatic updates)
   installs from the [mommy tap](https://github.com/fwdekker/homebrew-mommy).
   (requires [brew](https://brew.sh/).)
   ```shell
@@ -53,7 +53,7 @@ find your operating system and package manager for the right instructions~
 <details>
 <summary>arch linux</summary>
 
-* **arch user repository** (automatic updates)  
+* **arch user repository** (automatic updates)
   installs from the [arch user repository](https://aur.archlinux.org/packages/mommy), allowing for automatic updates.
   you should probably use [an aur helper](https://wiki.archlinux.org/title/AUR_helpers) to do this:
   ```shell
@@ -65,7 +65,7 @@ find your operating system and package manager for the right instructions~
   aura -A mommy
   # and so on
   ```
-* **homebrew** (automatic updates)  
+* **homebrew** (automatic updates)
   installs from the [mommy tap](https://github.com/fwdekker/homebrew-mommy).
   (requires [brew](https://brew.sh/).)
   ```shell
@@ -86,7 +86,7 @@ find your operating system and package manager for the right instructions~
 <summary>debian/ubuntu/mint/apt-based</summary>
 
 
-* **apt ≥2.2.4** (automatic updates)  
+* **apt ≥2.2.4** (automatic updates)
   this method requires apt v2.2.4 or newer.
   check your version of apt with `apt -v`~
 
@@ -100,7 +100,7 @@ find your operating system and package manager for the right instructions~
    sudo apt update
    sudo apt install mommy
    ```
-* **apt <2.2.4** (automatic updates)  
+* **apt <2.2.4** (automatic updates)
   this method works on all versions of apt~
 
   installs from the [mommy apt repository](https://github.com/fwdekker/apt-mommy).
@@ -119,7 +119,7 @@ find your operating system and package manager for the right instructions~
   sudo apt update
   sudo apt install mommy
   ```
-* **homebrew** (automatic updates)  
+* **homebrew** (automatic updates)
   installs from the [mommy tap](https://github.com/fwdekker/homebrew-mommy).
   (requires [brew](https://brew.sh/).)
   ```shell
@@ -163,7 +163,7 @@ find your operating system and package manager for the right instructions~
 <details>
 <summary>macos</summary>
 
-* **homebrew** (automatic updates)  
+* **homebrew** (automatic updates)
   installs from the [mommy tap](https://github.com/fwdekker/homebrew-mommy).
   (requires [brew](https://brew.sh/).)
   ```shell
@@ -209,12 +209,12 @@ find your operating system and package manager for the right instructions~
 <details>
 <summary>nixpkgs/nixos</summary>
 
-* **nix-shell** (temporary)  
+* **nix-shell** (temporary)
   if you're curious but not ready for commitments, use `nix-shell` to temporarily install mommy:
   ```shell
   nix-shell -p mommy
   ```
-* **home-manager** (persistent)  
+* **home-manager** (persistent)
   if you use home manager, install mommy by adding the following to your home manager configuration:
   ```nix
   home.packages = with pkgs; [
@@ -233,7 +233,7 @@ find your operating system and package manager for the right instructions~
   ```
   check [the full list of configuration options](#configuration).
   note that your nix configuration should use lowercase variable names~
-* **nixos** (persistent)  
+* **nixos** (persistent)
   install mommy by adding the following to your nixos configuration (usually in `/etc/nixos/configuration.nix`):
   ```nix
   environment.systemPackages = with pkgs; [
@@ -270,7 +270,7 @@ find your operating system and package manager for the right instructions~
 <details>
 <summary>red hat/fedora/opensuse/rpm-based</summary>
 
-* **dnf/yum (copr)** (automatic updates)  
+* **dnf/yum (copr)** (automatic updates)
   installs from the [copr repository](https://copr.fedorainfracloud.org/coprs/fwdekker/mommy/).
   (requires the `dnf-plugins-core` package.)
   ```shell
@@ -278,7 +278,7 @@ find your operating system and package manager for the right instructions~
   sudo dnf install mommy
   ```
   packages are signed by `fwdekker#mommy@copr.fedorahosted.org`, check for fingerprint `E332 C8E6 ADAA 58E4 1974 7CE2 CE16 3CFF 9F79 DD8A`~
-* **homebrew** (automatic updates)  
+* **homebrew** (automatic updates)
   installs from the [mommy tap](https://github.com/fwdekker/homebrew-mommy).
   (requires [brew](https://brew.sh/).)
   ```shell
@@ -301,9 +301,9 @@ find your operating system and package manager for the right instructions~
 
 for **git bash** or **cygwin**, see [the instructions for using mommy without a package manager](#installation--without-a-package-manager)~
 
-* **wsl** (automatic or manual updates)  
+* **wsl** (automatic or manual updates)
   follow any of the mommy installation instructions for your installed linux subsystem (default is ubuntu) or [build mommy from source](#installation--without-a-package-manager)~
-* **msys2** (automatic or manual updates)  
+* **msys2** (automatic or manual updates)
   follow any of the mommy installation instructions for _arch linux_ (except **do not use the arch user repository method**) or [build mommy from source](#installation--without-a-package-manager)~
 </details>
 
@@ -321,14 +321,14 @@ if you want to customise where and how mommy installs, you can just compile her 
    git clone https://github.com/fwdekker/mommy.git
    cd mommy
    ```
-3. **install**  
+3. **install**
    this step builds mommy's files and copies them into your system.
    the exact paths differ per system, so find the instructions that are right for your system.
 
-   > **ℹ️ note**  
+   > **ℹ️ note**
    > if you want to install mommy only for the current user, add `prefix='~/.local/'` before `install`~
 
-   > **💡 tip**  
+   > **💡 tip**
    > check the [makefile](https://github.com/fwdekker/mommy/blob/main/GNUmakefile) for a list of all prefix variables you can override~
 
     * _debian/ubuntu/apt-based_
@@ -359,7 +359,7 @@ if you want to customise where and how mommy installs, you can just compile her 
       ```shell
       sudo make install
       ```
-4. **test** (optional)  
+4. **test** (optional)
    if you want to make sure installation was successful, you can run tests using [shellspec](https://github.com/shellspec/shellspec).
    run the following from inside the cloned mommy repository
    ```shell
@@ -367,7 +367,7 @@ if you want to customise where and how mommy installs, you can just compile her 
    PATH="$(pwd)/shellspec/:$PATH" make system=1 test
    ```
    some tests will be skipped, depending on which other programs you have installed~
-5. **uninstall** (optional)  
+5. **uninstall** (optional)
    if you want to uninstall after running `make install`, just run the same command as in step 3, except you replace `install` with `uninstall`.
 
    uninstall might not work completely if you installed a different version than the one you're uninstalling.
@@ -455,7 +455,7 @@ after that, she will read the user-specific **local** config file, overriding th
     2. mommy traverses this list, and stops once she finds a directory that contains the file `config.sh`.
        this file will be the global config file~
 * to find the **local** config file, mommy runs the following procedure.
-    1. if a config file is specified using a [command-line option](#usage), that file is used. 
+    1. if a config file is specified using a [command-line option](#usage), that file is used.
     2. if `$XDG_CONFIG_HOME` is defined, the file `$XDG_CONFIG_HOME/mommy/config.sh` is used.
     3. otherwise, `$HOME/.config/mommy/config.sh` is used~
 </details>
@@ -597,46 +597,46 @@ $env.PROMPT_COMMAND_RIGHT = {|| mommy -1 -s $env.LAST_EXIT_CODE }
 complete each of the following steps to get mommy working in [powershell](https://en.wikipedia.org/wiki/PowerShell).
 some steps vary depending on [how and where you installed mommy](#installation)~
 
-1. **disable mommy's color output**  
+1. **disable mommy's color output**
    mommy's colors don't really work well in powershell, so you'll have to disable them~
-   * **wsl**  
+   * **wsl**
      if you want to run mommy through wsl, open `wsl` and run
      ```shell
      # run this in wsl
      mkdir -p ~/.config/mommy
      echo "MOMMY_COLOR=" >> ~/.config/mommy/config.sh
      ```
-   * **git bash**  
+   * **git bash**
      if you want to run mommy through git bash, run
      ```shell
      # run this in powershell
      [IO.Directory]::CreateDirectory("$HOME/.config/mommy")
      [IO.File]::WriteAllLines("$HOME/.config/mommy/config.sh", "MOMMY_COLOR=''")
      ```
-2. **test prompt**  
+2. **test prompt**
    change powershell's prompt to include mommy's message~
-   * **wsl**  
+   * **wsl**
      if you want to run mommy through wsl, run
      ```shell
      # run this in powershell
      function prompt { "$(wsl -e mommy -1 -s $([int][bool]::Parse(!$?)))> " }
      ```
-   * **git bash**  
+   * **git bash**
      if you want to run mommy through git bash, and you downloaded mommy to `C:\Users\username\mommy`, run
      ```shell
      # run this in powershell
      function prompt { "$(& "C:\Program Files\Git\bin\sh.exe" "C:/Users/username/mommy" -1 -s $([int][bool]::Parse(!$?)))> " }
      ```
-3. **save prompt**  
+3. **save prompt**
    now let's make this prompt persistent.
    in powershell, run `notepad $profile` to open your powershell settings, and add the `function prompt [...]` line from above~
 
-   > **ℹ️ note**  
+   > **ℹ️ note**
    > if you get an error that this file does not exist, run `new-item -itemtype file -path $profile -force` to create it~
 
-   > **ℹ️ note**  
+   > **ℹ️ note**
    > if you get an error that you cannot run local scripts, run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine` as admin, or [sign the script](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.3#methods-of-signing-scripts)~
-4. **improve prompt**  
+4. **improve prompt**
    the instructions above show the basics of using mommy in powershell.
    you can make it way cooler using a theme engine like [oh-my-posh](https://ohmyposh.dev/).
    for example, you can use background colors or display mommy in the right prompt instead of the left~
@@ -646,9 +646,9 @@ some steps vary depending on [how and where you installed mommy](#installation)~
 <details>
 <summary><a name="shell-integration--starship"></a>🚀 starship</summary>
 
-[starship](https://starship.rs/) is a cross-shell prompt. 
-unfortunately, [starship doesn't support mommy](https://github.com/fwdekker/mommy/issues/156#issuecomment-3596187052). 
-starship doesn't have any way of passing the previous command's exit code to another program. 
+[starship](https://starship.rs/) is a cross-shell prompt.
+unfortunately, [starship doesn't support mommy](https://github.com/fwdekker/mommy/issues/156#issuecomment-3596187052).
+starship doesn't have any way of passing the previous command's exit code to another program.
 if that feature is ever added, then you can integrate starship with mommy~
 
 </details>
@@ -659,13 +659,13 @@ if that feature is ever added, then you can integrate starship with mommy~
 instructions for the [z shell](https://en.wikipedia.org/wiki/Z_shell) ("zsh") depend on where you want mommy's output.
 you can either get the output above your prompt, or aligned to the right~
 
-* **show mommy above the prompt**  
+* **show mommy above the prompt**
   to get mommy's output on a separate line above your prompt, add the following line to `~/.zshrc`:
   ```shell
   # ~/.zshrc
   precmd() { mommy -1 -s $? }
   ```
-* **show mommy to the right of each command**  
+* **show mommy to the right of each command**
   to get mommy's output on the same line as your prompt, aligned to the right, add the following to `~/.zshrc`:
   ```shell
   # ~/.zshrc
@@ -744,7 +744,7 @@ this section explains some development details of the project, like its file str
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | _project root_               | various configuration files and repository documentation                                                                                                          |
 | `.github/`                   | supplemental files for the repository on github                                                                                                                   |
-| `.github/img/`               | images used in the readme                                                                                                                                         | 
+| `.github/img/`               | images used in the readme                                                                                                                                         |
 | `.github/workflows/`         | github actions definitions                                                                                                                                        |
 | `pkg/`                       | files used by programs that package mommy into distributable files                                                                                                |
 | `pkg/fpm/`                   | changelogs for packages created by `fpm`. more about these changelogs in the [development section in the readme](/?tab=readme-ov-file#%EF%B8%8F-development-top-) |
@@ -774,7 +774,7 @@ if that annoys you, run `make build` after each change, and use `build/bin/mommy
 <details>
 <summary>🧪 tests</summary>
 
-1. **requirements**  
+1. **requirements**
    [shellspec](https://github.com/shellspec/shellspec)
 2. **test local code**
    1. all tests
@@ -793,7 +793,7 @@ if that annoys you, run `make build` after each change, and use `build/bin/mommy
    ```shell
    make system=1 test
    ```
-4. **configuration**  
+4. **configuration**
    except for `system=1`, test behaviour is configured with environment variables.
    check the various files in [`src/test/`](https://github.com/fwdekker/mommy/tree/main/src/test) to find 'em all~
 </details>
@@ -808,7 +808,7 @@ mommy is distributed in three ways:
 
 let's go into them in more detail~
 
-* **📦 binary packages**  
+* **📦 binary packages**
   the binary packages attached to the github release are built with the [makefile](https://github.com/fwdekker/mommy/blob/main/GNUmakefile).
   run `make list` to see a list of build targets; you're looking for the ones starting with `dist/`~
 
@@ -838,13 +838,13 @@ let's go into them in more detail~
   make dist/apk dist/pacman dist/rpm
   ```
   unfortunately, packages for macos, netbsd, and openbsd cannot be built on systems other than themselves~
-* **🏗️ build servers**  
+* **🏗️ build servers**
   build servers build mommy distributions on-demand for each release, and make the created packages available for all users.
   how sweet~
 
   * [apt-mommy](https://github.com/fwdekker/apt-mommy) is a github-based apt repository that hosts mommy's `.deb` packages after they have been built in [mommy's cd pipeline](https://github.com/fwdekker/mommy/actions/workflows/cd.yml)~
   * [copr](https://copr.fedorainfracloud.org/coprs/fwdekker/mommy/) builds packages for fedora and epel after [receiving an event from the webhook](https://github.com/fwdekker/mommy/settings/hooks)~
-* **🌱 source builds**  
+* **🌱 source builds**
   some servers host instructions on how to build mommy, but don't do any work beyond that.
   users connect to the server, get the latest instructions, and their system builds mommy for them locally~
 
@@ -919,5 +919,5 @@ if mommy should add, remove, or change anything here, [open an issue](https://gi
 * mommy thanks [fuel-pcbox](https://github.com/fuel-pcbox) for [her suggestion of supporting regexes for forbidden words](https://github.com/fwdekker/mommy/issues/103)~
 * mommy thanks [satyam singh niranjan](https://github.com/Satanarious) for [suggesting powershell support](https://github.com/fwdekker/mommy/issues/124)~
 * mommy thanks [biko](https://github.com/Bikoil) for [making mommy refer to people by their username by default](https://github.com/fwdekker/mommy/issues/131)~
-* mommy thanks [toria](https://github.com/ninetailedtori) for [documenting how to configure starship](https://github.com/fwdekker/mommy/pull/135)~
+* mommy thanks [toria](https://github.com/ninetailedtori) for [documenting how to configure starship and adding bash_completions](https://github.com/fwdekker/mommy/pull/135, https://github.com/fwdekker/mommy/pull/170)~
 * mommy thanks [david scann](https://github.com/DavidScann) for [providing feedback on the toggle feature](https://github.com/fwdekker/mommy/issues/46#issuecomment-2888498320)~
