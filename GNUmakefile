@@ -7,7 +7,7 @@ dist_dir := dist/
 prefix := /usr/
 bin_prefix = $(prefix)/bin/
 man_prefix = $(prefix)/share/man/
-bash_prefix = $(prefix)/share/bash_completions.d/
+bash_prefix = $(prefix)/share/bash-completion/completions/
 fish_prefix = $(prefix)/share/fish/vendor_completions.d/
 zsh_prefix = $(prefix)/share/zsh/site-functions/
 
@@ -27,7 +27,7 @@ man_compress_ext := .gz
 %/gentoo: man_compress_ext :=  # The empty string
 %/haiku: prefix = $(build_dir)/haiku/
 %/haiku: man_prefix = $(prefix)/documentation/man/
-%/haiku: bash_prefix = $(prefix)/share/bash_completions.d/
+%/haiku: bash_prefix = $(prefix)/data/bash-completion/completions/
 %/haiku: fish_prefix = $(prefix)/data/fish/vendor_completions.d/
 %/haiku: zsh_prefix = $(prefix)/data/zsh/site-functions/
 %/netbsd: prefix = $(build_dir)/netbsd/usr/pkg/
@@ -81,6 +81,9 @@ build:
 
 	@mkdir -p "$(build_dir)/man/man1/"
 	@cp src/main/man/man1/mommy.1 "$(build_dir)/man/man1/"
+
+	@mkdir -p "$(build_dir)/completions/bash/"
+	@cp src/main/completions/bash/mommy.bash "$(build_dir)/completions/bash/"
 
 	@mkdir -p "$(build_dir)/completions/fish/"
 	@cp src/main/completions/fish/mommy.fish "$(build_dir)/completions/fish/"

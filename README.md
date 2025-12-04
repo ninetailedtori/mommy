@@ -33,7 +33,7 @@ find your operating system and package manager for the right instructions~
 <details>
 <summary>alpine linux</summary>
 
-* **homebrew** (automatic updates)
+* **homebrew** (automatic updates)  
   installs from the [mommy tap](https://github.com/fwdekker/homebrew-mommy).
   (requires [brew](https://brew.sh/).)
   ```shell
