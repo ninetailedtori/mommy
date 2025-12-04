@@ -848,7 +848,7 @@ let's go into them in more detail~
   some servers host instructions on how to build mommy, but don't do any work beyond that.
   users connect to the server, get the latest instructions, and their system builds mommy for them locally~
 
-  * for **arch linux**, the [arch user repository](https://aur.archlinux.org/) hosts the [mommy package](https://aur.archlinux.org/packages/mommy).
+  * for **arch linux**, the [arch user repository](https://aur.archlinux.org/) hosts the [mommy package](https://aur.archlinux.org/packages/mommy (or the version with latest commit at https://aur.archlinux.org/packages/mommy-git).
     a development mirror is hosted on github in [aur-mommy](https://github.com/fwdekker/aur-mommy)~
   * for **homebrew**, mommy has the [homebrew-mommy](https://github.com/fwdekker/homebrew-mommy) repository on github,
     which is resolved automatically by the brew client based on the repository's name~
@@ -919,5 +919,5 @@ if mommy should add, remove, or change anything here, [open an issue](https://gi
 * mommy thanks [fuel-pcbox](https://github.com/fuel-pcbox) for [her suggestion of supporting regexes for forbidden words](https://github.com/fwdekker/mommy/issues/103)~
 * mommy thanks [satyam singh niranjan](https://github.com/Satanarious) for [suggesting powershell support](https://github.com/fwdekker/mommy/issues/124)~
 * mommy thanks [biko](https://github.com/Bikoil) for [making mommy refer to people by their username by default](https://github.com/fwdekker/mommy/issues/131)~
-* mommy thanks [toria](https://github.com/ninetailedtori) for [documenting how to configure starship and adding bash_completions](https://github.com/fwdekker/mommy/pull/135, https://github.com/fwdekker/mommy/pull/170)~
+* mommy thanks [toria](https://github.com/ninetailedtori) for [documenting how to configure starship, managing the mommy-git archpkg and adding bash_completions](https://github.com/fwdekker/mommy/pull/135, https://aur.archlinux.org/packages/mommy-git, https://github.com/fwdekker/mommy/pull/170)~
 * mommy thanks [david scann](https://github.com/DavidScann) for [providing feedback on the toggle feature](https://github.com/fwdekker/mommy/issues/46#issuecomment-2888498320)~
