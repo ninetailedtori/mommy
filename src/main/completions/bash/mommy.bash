@@ -8,5 +8,7 @@
 
 _mommy()
 {
-
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=($(compgen -W "-c --config -d --global-config-dirs -e --eval -h --help -p --pipefail -s --status -t --toggle -v --version" -- $cur))
 }
+complete -F _mommy mommy
