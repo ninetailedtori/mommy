@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+## Four basics to writing Bash completions:
+# COMPREPLY - array for possible completions
+# COMP_WORDS - array of individual arguments typed so far
+# COMP_CWORD - index of the command argument at cursor
+# COMP_LINE - current command line
+
+_mommy()
+{
+
+}
